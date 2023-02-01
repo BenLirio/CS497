@@ -1,0 +1,3 @@
+[submodule "bloch-sphere"]
+	path = bloch-sphere
+	url = https://github.com/BenLirio/bloch-sphere.git
