@@ -1,0 +1,22 @@
+Intersection of
+ - Physics
+ - Math
+ - C.S.
+
+Computational Complexity/Efficiency
+ - Are they more powerful?
+ - When are they more powerful?
+
+Physical vs Unphysical Numbers
+ - Physical: Easy to imagine
+ - Unphysical: Used in theory
+
+Multiplication is n^2 in the number of bits
+Or n log(n) steps using Schonhage-Strassen
+Using FFT
+
+FFT is at the heart of QuantumComputation
+
+
+
+

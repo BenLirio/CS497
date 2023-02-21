@@ -15,11 +15,7 @@ I = lambda: np.array([[1, 0], [0, 1]])
 tensor = lambda *vs: reduce(np.kron, vs)
 
 message = [1, 0]
-def state_str(s):
-  out = ""
-  for i in range(len(s)):
-    out += "%.2f " % s[i]
-  return out
+state_str = lambda s: f'| {" | ".join(list(map(lambda x: "%.2f" % x, s)))} |'
 
 
 s = tensor(qbit(0), qbit(0))
@@ -31,10 +27,10 @@ print(f"Alice applies CNOT\n{state_str(s)}\n")
 
 if message[0] == 1:
   s = tensor(X(), I()) @ s
-  print(f"Alice encodes 1*\n{state_str(s)}\n")
+  print(f"Alice encodes 1?\n{state_str(s)}\n")
 if message[1] == 1:
   s = tensor(Z(), I()) @ s
-  print(f"Alice encodes *1\n{state_str(s)}\n")
+  print(f"Alice encodes ?1\n{state_str(s)}\n")
 
 s = CNOT() @ s
 print(f"Bob applies CNOT\n{state_str(s)}\n")

@@ -1,0 +1,14 @@
+qdit has n states
+qbit has 2 states
+
+You can measure in any orthonormal basis
+
+v = a*0 + b*1
+
+a = projection of v onto 0
+
++,- basis is
++: 45 deg
+-: 135 deg
+
+
