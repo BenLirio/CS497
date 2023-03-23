@@ -36,6 +36,16 @@ def tensor(lst):
     return hd
   return np.kron(hd, tensor(tl))
 
+def show(A):
+  for i in range(0, len(A), 2):
+    if np.round(A[i][0], 2) == -np.round(A[i+1][0],2):
+      s = '+'
+      m = 1
+      if A[i][0] < 0:
+        s = '-'
+        m = -1
+      print(s*(int(A[i][0]*20)*m))
+
 
 ket = lambda x: np.array([[1-x], [x]])
 zero = lambda n: tensor([ket(0)]*n)
@@ -66,6 +76,15 @@ G = G2 @ G1 @ G0 @ O
 prologue = tensor([H,H,H])
 epilogue = tensor([I,I,H])
 
-out = epilogue @ G @ prologue @ s
-print(np.round(out, 2))
+print("Prologue")
+show(prologue @ s)
+print("After Oracle")
+show(O @ prologue @ s)
+print("After G")
+show(G @ prologue @ s)
+
+
+# print("final")
+# out = epilogue @ G @ prologue @ s
+# print(np.round(out, 2))
 
